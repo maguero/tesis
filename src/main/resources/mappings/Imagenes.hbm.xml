@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.emisi.model">
+
+	<class name="Imagen" table="imagenes">
+		<id name="id" column="id_imagen" />
+		<property name="dicom" type="ImagenType" column="imagen" />
+	</class>
+	
+</hibernate-mapping>

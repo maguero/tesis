@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<!-- DAO GENERICO -->
+	<bean id="dao.generico" class="com.emisi.dao.GenericDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<!-- Custom DAOs -->
+	<bean id="dao.serie" class="com.emisi.dao.SerieDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	<bean id="dao.imagen" class="com.emisi.dao.ImagenDAOImpl">
+		<property name="sessionFactory" ref="sessionFactory"/>
+	</bean>
+	
+	<!-- SERVICIO GENERICO -->
+	<bean id="service.generico" class="com.emisi.service.GenericServiceImpl">
+		<property name="dao">
+			<ref bean="dao.imagen"></ref>
+		</property>
+	</bean>
+	
+	<!-- SERVICIOS PARA LOS OBJETOS PERSISTENTES -->
+	<bean id="service.imagen" parent="service.generico">
+		<property name="clase" value="com.emisi.model.Imagen" />
+	</bean>
+	
+	<bean id="service.serie" parent="service.generico">
+		<property name="clase" value="com.emisi.model.Serie" />
+	</bean>
+	
+	<bean id="service.estudio" parent="service.generico">
+		<property name="clase" value="com.emisi.model.Estudio" />
+	</bean>
+	
+</beans>

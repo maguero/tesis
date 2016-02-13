@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.emisi.model">
+
+	<class name="Estudio" table="estudio">
+		
+		<!-- Los datos de los pacientes están protegidos -->
+		<id name="idEstudio" column="idEstudio" />
+		
+		<property name="descripcion" column="descripcion" />
+		<property name="idPaciente" column="idPaciente" />
+		
+		<set name="series" fetch="join" table="table(this_.series)" lazy="false" mutable="false">
+			<key column="fkEstudio" />
+			<composite-element class="com.emisi.model.Serie"> <!-- class attribute required -->
+				<property name="idSerie" />
+				<property name="descripcion" />
+				<!-- 
+				<nested-composite-element name="imagenes" class="com.emisi.model.Serie">
+					<property name="idImagen" />
+					<property name="dicom">
+						<type name="OrdDicomType" />
+					</property>
+				</nested-composite-element>
+				 -->
+			</composite-element>
+		</set>
+		<!-- 
+		<id name="idImagen" column="idImagen" />
+		
+		<property name="dicom" type="OrdDicomType" column="dicom" />
+		 -->
+	
+	</class>
+	
+</hibernate-mapping>

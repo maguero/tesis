@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/">
+
+<body>
+
+	<wicket:extend>
+	
+		<h2>Consulta de imagenes</h2>
+		<br/>
+
+		<div wicket:id="navigator"></div>
+		<div class="row">
+	        <div>
+	          	<table class="table table-striped">
+	            	<thead>
+		              <tr>
+							<th>ID Imagen</th>
+							<th>Modalidad</th>
+							<th>Diagnostico</th>
+							<th>Imagen</th>
+							<th>Acción</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr wicket:id="tablaImagen">
+							<td ><span wicket:id="id">ID Imagen</span></td>
+							<td><span wicket:id="modalidad">Modalidad</span></td>
+							<td><span wicket:id="diagnostico">Diagnostico</span></td>
+							<td align="center"><img wicket:id="imagen" class="img-thumbnail"/></td>
+							<td align="center"><a wicket:id="detalle"><img src="images/info.png"/></a></td>
+							<!-- <wicket:message key="menu.carga"/> -->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</wicket:extend>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/">
+
+<body>
+
+	<wicket:extend>
+	
+		<h2>Imagen</h2>
+		<p>Acá va el detalle de la imagen.</p>
+		
+		
+		<div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Imagen</h3>
+            </div>
+            <div class="panel-body" align="center">
+              <img wicket:id="imagen"/>
+            </div>
+          </div>
+		
+		<div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title">Informacion</h3>
+            </div>
+            <div class="panel-body" align="center">
+              	<table id="table" class="table table-striped">
+					<tr>
+						<td><span wicket:id="StudyID" /></td>
+					</tr>
+					<tr>
+						<td><span wicket:id="Modality" /></td>
+					</tr>
+					<tr>
+						<td><span wicket:id="StudyDescription" /></td>
+					</tr>
+					<tr>
+						<td><span wicket:id="StudyDate" /></td>
+					</tr>
+					<tr>
+						<td><span wicket:id="SeriesInstanceUID" /></td>
+					</tr>
+					<tr>
+						<td><span wicket:id="SeriesDescription" /></td>
+					</tr>
+					<tr>
+						<td><span wicket:id="SeriesType" /></td>
+					</tr>
+					<tr>
+						<td><span wicket:id="PatientID" /></td>
+					</tr>
+					<tr>
+						<td><span wicket:id="PatientAge" /></td>
+					</tr>
+					<tr>
+						<td><span wicket:id="PatientWeight" /></td>
+					</tr>
+					<tr>
+						<td><span wicket:id="PatientSex" /></td>
+					</tr>
+					<tr>
+						<td><span wicket:id="PatientSize" /></td>
+					</tr>
+					<tr>
+						<td><span wicket:id="PatientOrientation" /></td>
+					</tr>
+					<tr>
+						<td><span wicket:id="PatientPosition" /></td>
+					</tr>
+				</table>
+            </div>
+          </div>
+
+				
+		
+	</wicket:extend>
+
+</body>
+</html>

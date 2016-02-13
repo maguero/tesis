@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.emisi.model">
+
+	<class name="Serie" table="serie_obj_table">
+
+		<id name="idSerie" column="IDSERIE" />
+
+		<property name="nombre" column="nombre" /> 
+
+		<!-- 
+		<set name="imagenes" lazy="false" >
+			<key column="order_id">
+				<composite-element class="eg.OrderLine">
+					<many-to-one name="purchaseDetails class=" eg.Purchase " />
+					<many-to-one name="item" class="eg.Item" />
+				</composite-element>
+		</set>
+		-->
+
+	</class>
+
+</hibernate-mapping>
