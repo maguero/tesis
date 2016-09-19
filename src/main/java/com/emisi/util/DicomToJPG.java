@@ -14,8 +14,8 @@ import javax.imageio.stream.ImageInputStream;
 
 import org.dcm4che2.imageio.plugins.dcm.DicomImageReadParam;
 
-import com.sun.image.codec.jpeg.JPEGCodec;
-import com.sun.image.codec.jpeg.JPEGImageEncoder;
+//import com.sun.image.codec.jpeg.JPEGCodec;
+//import com.sun.image.codec.jpeg.JPEGImageEncoder;
 
 /**
  * Clase responsable de convertir una imagen dicom a jpg!
@@ -47,8 +47,8 @@ public class DicomToJPG {
 
             File myJpegFile = new File(destino);
             OutputStream output = new BufferedOutputStream(new FileOutputStream(myJpegFile));
-            JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(output);
-            encoder.encode(myJpegImage);
+            //JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(output);
+            //encoder.encode(myJpegImage);
             output.close();
             
             return myJpegFile;

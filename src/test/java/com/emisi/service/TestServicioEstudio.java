@@ -5,6 +5,7 @@ package com.emisi.service;
 
 import java.util.List;
 
+import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
@@ -27,6 +28,7 @@ public class TestServicioEstudio extends AbstractJUnit4SpringContextTests {
 
 	
 	@org.junit.Test
+	@Ignore
 	public void testQueryByClass() {
 		GenericService<Estudio> service = (GenericService<Estudio>) applicationContext
 		.getBean("service.estudio");

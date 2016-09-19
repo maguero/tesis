@@ -9,9 +9,9 @@
 	<!-- Datasource utilizado en desarrollo. -->
 	<bean id="dataSourceDev" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:emisi" />
-		<property name="username" value="mjaguero" />
-		<property name="password" value="admin" />
+		<property name="url" value="jdbc:oracle:thin:@192.168.40.190:1521:orcl" />
+		<property name="username" value="hr" />
+		<property name="password" value="oracle" />
 	</bean>
 	
 	<!-- Administrador de transacciones. -->
@@ -38,9 +38,9 @@
 	    <property name="mappingResources">
 			<list>
 				<value>mappings/CustomTypes.hbm.xml</value>
-				<value>mappings/Estudio.hbm.xml</value>
 				<value>mappings/Imagen.hbm.xml</value>
-				<!-- 
+				<!--
+				<value>mappings/Estudio.hbm.xml</value>
 				<value>mappings/Serie.hbm.xml</value>
 				 -->
 			</list>

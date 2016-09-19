@@ -39,7 +39,7 @@
 	</properties>
 	<dependencies>
 		<!--  WICKET DEPENDENCIES -->
-		
+
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket</artifactId>
@@ -51,7 +51,7 @@
 			<artifactId>wicket-extensions</artifactId>
 			<version>${wicket.version}</version>
 		</dependency>
-			
+
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket-datetime</artifactId>
@@ -63,7 +63,7 @@
 			<artifactId>wicket-auth-roles</artifactId>
 			<version>${wicket.version}</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.apache.wicket</groupId>
 			<artifactId>wicket-spring</artifactId>
@@ -104,46 +104,46 @@
 			<scope>provided</scope>
 		</dependency>
 
-		<!-- ORACLE JDBC driver, need install yourself mvn install:install-file 
-			-Dfile=mvn install:install-file -Dfile=C:\app\maguero\product\11.2.0\dbhome_1\jdbc\lib\ojdbc6.jar 
+		<!-- ORACLE JDBC driver, need install yourself mvn install:install-file
+			-Dfile=mvn install:install-file -Dfile=C:\app\maguero\product\11.2.0\dbhome_1\jdbc\lib\ojdbc6.jar
 			-DgroupId=com.oracle -DartifactId=ojdbc6 -Dversion=11.2.0 -Dpackaging=jar -->
-			
+
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>11.2.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>orddicom</artifactId>
 			<version>11.2.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ordim</artifactId>
 			<version>11.2.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>xdb</artifactId>
 			<version>11.2.0</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>xmlparserv2</artifactId>
 			<version>11.2.0</version>
 		</dependency>
-		
+
 		<dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
             <version>1.2.2</version>
         </dependency>
-        
+
         <dependency>
 			<groupId>org.apache.geronimo.specs</groupId>
 			<artifactId>geronimo-jta_1.1_spec</artifactId>
@@ -162,38 +162,38 @@
 				</exclusion>
 			</exclusions>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.4</version>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-all</artifactId>
 			<version>1.6</version>
 			<scope>test</scope>
-		</dependency> 
-		
-		<dependency>  
-			<groupId>org.springframework</groupId>  
-			<artifactId>spring-test</artifactId>  
-			<version>${spring.version}</version>  
 		</dependency>
-		
-		<dependency>  
-			<groupId>org.springframework</groupId>  
-			<artifactId>spring</artifactId>  
-			<version>${spring.version}</version>  
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.aspectj</groupId>
 			<artifactId>aspectjweaver</artifactId>
 			<version>1.6.1</version>
 		</dependency>
-		
+
 		<!-- DMC4CHE DEPENDENCIES -->
 		<dependency>
 			<groupId>dcm4che</groupId>
@@ -267,12 +267,13 @@
 			<version>1.1</version>
 		</dependency>
 
+		<!--
 		<dependency>
 			<groupId>org.geotools</groupId>
 			<artifactId>gt-coverage</artifactId>
 			<version>2.7.4</version>
 		</dependency>
-		
+		-->
 
 	</dependencies>
 	<build>
@@ -364,6 +365,17 @@
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
+		</repository>
+		<!--
+		<repository>
+			<id>osgeo</id>
+			<name>Open Source Geospatial Foundation Repository</name>
+			<url>http://download.osgeo.org/webdav/geotools/</url>
+		</repository>
+		-->
+		<repository>
+			<id>DCM4CHE</id>
+			<url>http://www.dcm4che.org/maven2/</url>
 		</repository>
 	</repositories>
 </project>

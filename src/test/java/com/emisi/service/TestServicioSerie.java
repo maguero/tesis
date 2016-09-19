@@ -12,6 +12,7 @@ import java.sql.SQLException;
 
 import oracle.ord.dicom.OrdDicom;
 
+import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
@@ -35,6 +36,7 @@ public class TestServicioSerie extends AbstractJUnit4SpringContextTests {
 
 	
 	@org.junit.Test
+	@Ignore
 	public void testQueryByClass() {
 		GenericService<Imagen> service = (GenericService<Imagen>) applicationContext
 		.getBean("service.serie");
@@ -44,6 +46,7 @@ public class TestServicioSerie extends AbstractJUnit4SpringContextTests {
 	
 	
 	@org.junit.Test
+	@Ignore
 	public void testQueryBySQL() {
 		SerieDAOImpl dao = (SerieDAOImpl) applicationContext.getBean("dao.serie");
 		

@@ -12,6 +12,7 @@ import java.sql.SQLException;
 
 import oracle.ord.dicom.OrdDicom;
 
+import org.junit.Ignore;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.AbstractJUnit4SpringContextTests;
@@ -36,6 +37,7 @@ public class TestDaoImagen extends AbstractJUnit4SpringContextTests {
 
 	
 	@org.junit.Test
+	@Ignore
 	public void testFindAll() {
 		ImagenDAOImpl dao = (ImagenDAOImpl) applicationContext
 		.getBean("dao.imagen");

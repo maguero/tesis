@@ -1,14 +1,13 @@
 package com.emisi.presentation;
 
+import com.emisi.dao.GenericDAOImpl;
+import com.emisi.model.Imagen;
+import com.emisi.util.DicomUtils;
 import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.dcm4che2.data.DicomObject;
 import org.dcm4che2.data.Tag;
-
-import com.emisi.dao.ImagenDAOImpl;
-import com.emisi.model.Imagen;
-import com.emisi.util.DicomUtils;
 
 public class ImagenPage extends TemplateIndex {
 
@@ -17,16 +16,16 @@ public class ImagenPage extends TemplateIndex {
 	private static final long serialVersionUID = 1L;
 
 	@SpringBean(name = "dao.imagen")
-	private ImagenDAOImpl daoImagen;
+	private GenericDAOImpl<Imagen> daoImagen;
 
 	public ImagenPage(final PageParameters parameters) {
 		super(parameters);
 
 		String imagenId = parameters.getString("id");
 
-		Imagen imagen = daoImagen.find(imagenId);
+		Imagen imagen = daoImagen.find(imagenId, Imagen.class);
 
-		System.out.println("Imagen: " + imagen.getDiagnostico());
+		System.out.println("ID Imagen: " + imagen.getId());
 
 		DicomObject dicom = DicomUtils.getDicomObject(imagen.getDicom());
 		

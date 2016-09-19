@@ -13,7 +13,7 @@
 	</class>
 	 -->
 	
-	<class name="Imagen" >
+	<class name="Imagen" table="imagen">
 		<id name="idImagen" column="idImagen" />
 		<property name="dicom" type="OrdDicomType" column="dicom" />
 	</class>
