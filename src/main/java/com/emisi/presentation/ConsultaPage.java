@@ -1,8 +1,8 @@
 package com.emisi.presentation;
 
-import java.util.ArrayList;
-import java.util.List;
-
+import com.emisi.model.Imagen;
+import com.emisi.service.GenericService;
+import com.emisi.util.DicomUtils;
 import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -14,11 +14,7 @@ import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.dcm4che2.data.DicomObject;
 import org.dcm4che2.io.DicomInputStream;
 
-import com.emisi.dao.SerieDAOImpl;
-import com.emisi.model.Imagen;
-import com.emisi.model.Serie;
-import com.emisi.service.GenericService;
-import com.emisi.util.DicomUtils;
+import java.util.List;
 
 public class ConsultaPage extends TemplateIndex {
 	
@@ -28,9 +24,6 @@ public class ConsultaPage extends TemplateIndex {
 	@SpringBean(name = "service.imagen")
 	private GenericService<Imagen> imagenService;
 	
-//	@SpringBean(name = "dao.serie")
-//	private SerieDAOImpl daoSerie;
-
 	public ConsultaPage(final PageParameters parameters) {
 		super(parameters);
 
@@ -68,7 +61,7 @@ public class ConsultaPage extends TemplateIndex {
 				}
 				
                 // id de la imagen
-				item.add(new Label("id", imagen.getIdImagen()));//.substring(0, 10)));
+				item.add(new Label("id", imagen.getIdImagen().substring(0, 14).concat("...")));//.substring(0, 10)));
 				// id de la imagen
 				item.add(new Label("modalidad", imagen.getModalidad()));
 				// id de la imagen

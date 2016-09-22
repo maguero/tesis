@@ -9,11 +9,11 @@
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
-	<!-- Custom DAOs
-	<bean id="dao.serie" class="com.emisi.dao.SerieDAOImpl">
+	<!-- Custom DAOs -->
+	<bean id="dao.custom.imagen" class="com.emisi.dao.ImagenDAOImpl">
 		<property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
-	-->
+
 	<bean id="dao.imagen" parent="dao.generico">
 
 	</bean>

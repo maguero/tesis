@@ -5,18 +5,11 @@
 	<class name="Serie" table="serie">
 
 		<id name="idSerie" column="IDSERIE" />
-
-		<property name="nombre" column="nombre" /> 
-
-		<!-- 
-		<set name="imagenes" lazy="false" >
-			<key column="order_id">
-				<composite-element class="eg.OrderLine">
-					<many-to-one name="purchaseDetails class=" eg.Purchase " />
-					<many-to-one name="item" class="eg.Item" />
-				</composite-element>
+		<property name="descripcion" column="descripcion" />
+		<set name="imagenes" lazy="false">
+			<key column="fkSerie"/>
+			<one-to-many class="com.emisi.model.Imagen"/>
 		</set>
-		-->
 
 	</class>
 

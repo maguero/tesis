@@ -29,11 +29,17 @@ public abstract class TemplateIndex extends WebPage {
 		BookmarkablePageLink linkCarga = new BookmarkablePageLink("tesis", IndexPage.class);
 		add(linkCarga);
 		
-		BookmarkablePageLink linkAdministracion = new BookmarkablePageLink("consulta", ConsultaPage.class);
-		add(linkAdministracion);
+		BookmarkablePageLink linkListarImagenes = new BookmarkablePageLink("listar", ConsultaPage.class);
+		add(linkListarImagenes);
+
+		BookmarkablePageLink linkBusquedaPorRegla = new BookmarkablePageLink("busquedaPorRegla", BusquedaPorReglaPage.class);
+		add(linkBusquedaPorRegla);
+
+		BookmarkablePageLink linkBusquedaSemantica = new BookmarkablePageLink("busquedaSemantica", BusquedaPorReglaPage.class);
+		add(linkBusquedaSemantica);
 		
-		BookmarkablePageLink linkAutorizacion = new BookmarkablePageLink("carga", CargaImagenesPage.class);
-		add(linkAutorizacion);
+//		BookmarkablePageLink linkAutorizacion = new BookmarkablePageLink("carga", CargaImagenesPage.class);
+//		add(linkAutorizacion);
 		
 		/*		
 		BookmarkablePageLink linkAyuda = new BookmarkablePageLink("ayuda", AyudaPage.class);

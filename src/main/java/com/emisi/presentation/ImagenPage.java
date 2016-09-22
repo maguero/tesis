@@ -5,6 +5,7 @@ import com.emisi.model.Imagen;
 import com.emisi.util.DicomUtils;
 import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
+import org.apache.wicket.markup.html.link.BookmarkablePageLink;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.dcm4che2.data.DicomObject;
 import org.dcm4che2.data.Tag;
@@ -56,6 +57,9 @@ public class ImagenPage extends TemplateIndex {
 		} catch (Exception e) {
 			add(new Label("imagen", "Imagen no disponible."));
 		}
+
+		BookmarkablePageLink similar = new BookmarkablePageLink("similar", SimilarPage.class);
+		add(similar);
 
 	}
 
