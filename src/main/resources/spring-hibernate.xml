@@ -40,9 +40,9 @@
 			<list>
 				<value>mappings/CustomTypes.hbm.xml</value>
 				<value>mappings/Imagen.hbm.xml</value>
-				<!--
-				<value>mappings/Estudio.hbm.xml</value>
 				<value>mappings/Serie.hbm.xml</value>
+				<value>mappings/Estudio.hbm.xml</value>
+				<!--
 				 -->
 			</list>
 		</property>

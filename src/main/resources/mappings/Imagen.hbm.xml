@@ -15,7 +15,12 @@
 	
 	<class name="Imagen" table="imagen">
 		<id name="idImagen" column="idImagen" />
+		<property name="fkSerie" column="fkSerie" />
 		<property name="dicom" type="OrdDicomType" column="dicom" />
 	</class>
+
+	<query name="bySerieId">
+		<![CDATA[from Imagen where fkSerie = :idSerie]]>
+	</query>
 	
 </hibernate-mapping>

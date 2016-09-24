@@ -1,6 +1,7 @@
-package com.emisi.presentation;
+package com.emisi.presentation.pages;
 
 import com.emisi.model.Imagen;
+import com.emisi.presentation.TemplateIndex;
 import com.emisi.service.GenericService;
 import com.emisi.util.DicomUtils;
 import org.apache.wicket.PageParameters;
@@ -63,9 +64,9 @@ public class ConsultaPage extends TemplateIndex {
                 // id de la imagen
 				item.add(new Label("id", imagen.getIdImagen().substring(0, 14).concat("...")));//.substring(0, 10)));
 				// id de la imagen
-				item.add(new Label("modalidad", imagen.getModalidad()));
+				item.add(new Label("modalidad", ""));
 				// id de la imagen
-				item.add(new Label("diagnostico", imagen.getDiagnostico()));
+				item.add(new Label("diagnostico", ""));
 				
 				// imagen
 				DicomInputStream din = null;

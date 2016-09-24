@@ -2,6 +2,7 @@ package com.emisi.service;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.transaction.annotation.Transactional;
 
@@ -58,4 +59,8 @@ public class GenericServiceImpl<CLAZZ> implements
 		this.clase = clase;
 	}
 
+	@Override
+	public List<CLAZZ> findByNamedQuery(String nombre, Map<String, Object> parametros) {
+		return dao.find(nombre, parametros);
+	}
 }

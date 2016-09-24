@@ -1,7 +1,9 @@
-package com.emisi.presentation;
+package com.emisi.presentation.pages;
 
 import com.emisi.dao.GenericDAOImpl;
 import com.emisi.model.Imagen;
+import com.emisi.presentation.TemplateIndex;
+import com.emisi.presentation.semantic.SimilarPage;
 import com.emisi.util.DicomUtils;
 import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
@@ -58,7 +60,11 @@ public class ImagenPage extends TemplateIndex {
 			add(new Label("imagen", "Imagen no disponible."));
 		}
 
-		BookmarkablePageLink similar = new BookmarkablePageLink("similar", SimilarPage.class);
+		//link al detalle de la imagen
+		PageParameters pars = new PageParameters();
+		pars.add("idImagen", imagen.getIdImagen());
+
+		BookmarkablePageLink similar = new BookmarkablePageLink("similar", SimilarPage.class, pars);
 		add(similar);
 
 	}

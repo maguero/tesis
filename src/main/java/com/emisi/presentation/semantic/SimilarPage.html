@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/">
+
+<body>
+
+	<wicket:extend>
+
+		<h2>Imagenes similares a *******</h2>
+		<br/>
+		poner mas datos aca
+
+		<div wicket:id="navigator"></div>
+		<div class="row">
+			<div>
+				<table class="table table-striped">
+					<thead>
+					<tr>
+						<th>ID Imagen</th>
+						<th>**</th>
+						<th>**</th>
+						<th>Imagen</th>
+						<th>Acci&oacute;n</th>
+					</tr>
+					</thead>
+					<tbody>
+					<tr wicket:id="tablaImagen">
+						<td ><span wicket:id="id">ID Imagen</span></td>
+						<td><span id="modalidad">*</span></td>
+						<td><span id="diagnostico">**</span></td>
+						<td align="center" width="20%"><img wicket:id="imagen" class="img-thumbnail"/></td>
+						<td align="center"><a wicket:id="detalle"><img src="images/info.png"/></a></td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</wicket:extend>
+
+</body>
+</html>

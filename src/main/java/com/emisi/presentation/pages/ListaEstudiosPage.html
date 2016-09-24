@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:wicket="http://wicket.apache.org/">
+
+<body>
+
+	<wicket:extend>
+	
+		<h2>Listado de Estudios</h2>
+		<br/>
+
+		<div wicket:id="navigator"></div>
+		<div class="row">
+	        <div>
+	          	<table class="table table-striped">
+	            	<thead>
+		              <tr>
+							<th>ID Estudio</th>
+							<th>ID Paciente</th>
+							<th>Descrición</th>
+							<th>Acci&oacute;n</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr wicket:id="tablaEstudios">
+							<td ><span wicket:id="id">ID Imagen</span></td>
+							<td><span wicket:id="fkPaciente">*</span></td>
+							<td><span wicket:id="descripcion">**</span></td>
+							<td align="center"><a wicket:id="detalle"><img src="images/info.png"/></a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</wicket:extend>
+
+</body>
+</html>

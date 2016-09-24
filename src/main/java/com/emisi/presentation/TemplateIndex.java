@@ -1,5 +1,7 @@
 package com.emisi.presentation;
 
+import com.emisi.presentation.pages.ListaEstudiosPage;
+import com.emisi.presentation.semantic.BusquedaPorReglaPage;
 import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.WebPage;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
@@ -29,7 +31,7 @@ public abstract class TemplateIndex extends WebPage {
 		BookmarkablePageLink linkCarga = new BookmarkablePageLink("tesis", IndexPage.class);
 		add(linkCarga);
 		
-		BookmarkablePageLink linkListarImagenes = new BookmarkablePageLink("listar", ConsultaPage.class);
+		BookmarkablePageLink linkListarImagenes = new BookmarkablePageLink("listar", ListaEstudiosPage.class);
 		add(linkListarImagenes);
 
 		BookmarkablePageLink linkBusquedaPorRegla = new BookmarkablePageLink("busquedaPorRegla", BusquedaPorReglaPage.class);

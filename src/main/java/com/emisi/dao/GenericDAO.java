@@ -5,6 +5,7 @@ package com.emisi.dao;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author mjaguero
@@ -18,7 +19,7 @@ public interface GenericDAO<T> {
 
 	Serializable getId(T object) throws Exception;
 	
-	// List<T> find(NamedQuery<T> query);
+	List<T> find(String namedQuery, final Map<String, Object> params);
 	
 	// List<T> find(CriteriaQuery<T> query);
 

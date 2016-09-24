@@ -2,6 +2,7 @@ package com.emisi.service;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.criterion.DetachedCriteria;
 
@@ -44,7 +45,7 @@ public interface GenericService<CLAZZ> {
 	 * @param parametros
 	 * @return
 	 */
-	//List<CLAZZ> findByNamedQuery(String nombre, Object... parametros);
+	List<CLAZZ> findByNamedQuery(String nombre, final Map<String, Object> parametros);
 	
 	/**
 	 * Consulta a traves de una NamedQuery

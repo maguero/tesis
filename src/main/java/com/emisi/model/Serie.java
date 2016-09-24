@@ -3,13 +3,14 @@
  */
 package com.emisi.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 /**
  * @author maguero
  * 
  */
-public class Serie {
+public class Serie implements Serializable {
 
 	private String idSerie;
 	private String descripcion;

@@ -18,8 +18,7 @@ public class Imagen implements Serializable {
 	private String idImagen;
 	private OrdDicom dicom;
 	private String id;
-	private String diagnostico;
-	private String modalidad;
+	private String fkSerie;
 
 	/**
 	 * @return the idImagen
@@ -64,32 +63,11 @@ public class Imagen implements Serializable {
 		this.id = id;
 	}
 
-	/**
-	 * @return the diagnostico
-	 */
-	public String getDiagnostico() {
-		return diagnostico;
+	public String getFkSerie() {
+		return fkSerie;
 	}
 
-	/**
-	 * @param diagnostico the diagnostico to set
-	 */
-	public void setDiagnostico(String diagnostico) {
-		this.diagnostico = diagnostico;
+	public void setFkSerie(String fkSerie) {
+		this.fkSerie = fkSerie;
 	}
-
-	/**
-	 * @return the modalidad
-	 */
-	public String getModalidad() {
-		return modalidad;
-	}
-
-	/**
-	 * @param modalidad the modalidad to set
-	 */
-	public void setModalidad(String modalidad) {
-		this.modalidad = modalidad;
-	}
-
 }

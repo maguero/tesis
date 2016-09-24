@@ -119,4 +119,17 @@ public class GenericDAOImpl<T> extends HibernateDaoSupport implements
 		return getHibernateTemplate().merge(object);
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<T> find(final String namedQuery, final Map<String, Object> params) {
+		return (List) getHibernateTemplate().execute(new HibernateCallback() {
+			public List<Object> doInHibernate(Session session)
+					throws HibernateException, SQLException {
+				final Query query = session.getNamedQuery(namedQuery);
+				for (String key : params.keySet()) {
+					query.setString(key, (String) params.get(key));
+				}
+				return query.list();
+			}
+		});
+	}
 }

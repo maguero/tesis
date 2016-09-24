@@ -3,6 +3,7 @@
  */
 package com.emisi.model;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Set;
 
@@ -10,7 +11,7 @@ import java.util.Set;
  * @author maguero
  * 
  */
-public class Estudio {
+public class Estudio implements Serializable {
 
 	private String IdEstudio;
 	private String idPaciente;

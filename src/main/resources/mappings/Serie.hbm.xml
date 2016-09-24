@@ -6,11 +6,15 @@
 
 		<id name="idSerie" column="IDSERIE" />
 		<property name="descripcion" column="descripcion" />
-		<set name="imagenes" lazy="false">
-			<key column="fkSerie"/>
-			<one-to-many class="com.emisi.model.Imagen"/>
-		</set>
+		<property name="fkEstudio" column="fkestudio" />
+		<!--<set name="imagenes" lazy="false">-->
+			<!--<key column="fkSerie"/>-->
+			<!--<one-to-many class="com.emisi.model.Imagen"/>-->
+		<!--</set>-->
 
 	</class>
+	<query name="byEstudioId">
+		<![CDATA[from Serie where fkEstudio = :idEstudio]]>
+	</query>
 
 </hibernate-mapping>

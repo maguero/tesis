@@ -1,4 +1,4 @@
-package com.emisi.presentation;
+package com.emisi.presentation.pages;
 
 import java.awt.image.BufferedImage;
 import java.io.BufferedOutputStream;
@@ -10,6 +10,7 @@ import javax.imageio.ImageIO;
 import javax.imageio.ImageReader;
 import javax.imageio.stream.ImageInputStream;
 
+import com.emisi.presentation.TemplateIndex;
 import org.apache.wicket.PageParameters;
 import org.apache.wicket.spring.injection.annot.SpringBean;
 import org.apache.wicket.util.io.ByteArrayOutputStream;
