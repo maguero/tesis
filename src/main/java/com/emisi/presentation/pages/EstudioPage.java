@@ -1,5 +1,6 @@
 package com.emisi.presentation.pages;
 
+import com.emisi.model.Estudio;
 import com.emisi.model.Imagen;
 import com.emisi.model.Serie;
 import com.emisi.presentation.TemplateIndex;
@@ -28,10 +29,20 @@ public class EstudioPage extends TemplateIndex {
 	@SpringBean(name = "service.serie")
 	private GenericService<Serie> service;
 
+	@SpringBean(name = "service.estudio")
+	private GenericService<Estudio> estudioService;
+
 	public EstudioPage(final PageParameters parameters) {
 		super(parameters);
 
 		String estudioId = parameters.getString("idEstudio");
+
+		final Estudio estudio = estudioService.findById(estudioId);
+
+		// tabla de informacion de serie
+		add(new Label("estudio.id", estudio.getIdEstudio()));
+		add(new Label("estudio.descripcion", estudio.getDescripcion()));
+		add(new Label("estudio.paciente", estudio.getIdPaciente()));
 
 		Map<String, Object> parametros = new FastHashMap();
 		parametros.put("idEstudio", estudioId);
@@ -48,24 +59,21 @@ public class EstudioPage extends TemplateIndex {
 				if (serie == null) {
 					item.add(new Label("id", "-"));
 					item.add(new Label("descripcion", "N/A"));
-//					item.add(new Label("diagnostico", "N/A"));
-//					item.add(new Label("imagen", "Imagen no disponible."));
 					item.add(new Label("detalle", "-"));
 					return;
 				}
 
-				// id de la imagen
-				item.add(new Label("id", serie.getIdSerie().substring(0, 14).concat("...")));//.substring(0, 10)));
-				// id de la imagen
 				item.add(new Label("descripcion", serie.getDescripcion()));
-				// id de la imagen
-//				item.add(new Label("diagnostico", ""));
 
 				//link al detalle de la imagen
 				PageParameters pars = new PageParameters();
 				pars.add("idSerie", serie.getIdSerie());
 
 				BookmarkablePageLink linkDetalle = new BookmarkablePageLink("detalle", SeriePage.class, pars);
+				linkDetalle.add(new Label("id", serie.getIdSerie().substring(0, 9)
+						.concat("...")
+						.concat(serie.getIdSerie().substring((serie.getIdSerie().length() - 9), serie.getIdSerie().length()))
+				));
 				item.add(linkDetalle);
 
 

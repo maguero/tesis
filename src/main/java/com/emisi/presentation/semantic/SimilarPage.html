@@ -5,9 +5,8 @@
 
 	<wicket:extend>
 
-		<h2>Imagenes similares a *******</h2>
+		<h2>Imagenes similares a <span wicket:id="imagen.id"/></h2>
 		<br/>
-		poner mas datos aca
 
 		<div wicket:id="navigator"></div>
 		<div class="row">
@@ -16,19 +15,17 @@
 					<thead>
 					<tr>
 						<th>ID Imagen</th>
-						<th>**</th>
-						<th>**</th>
+						<th>ID Serie</th>
+						<th>Modalidad</th>
 						<th>Imagen</th>
-						<th>Acci&oacute;n</th>
 					</tr>
 					</thead>
 					<tbody>
 					<tr wicket:id="tablaImagen">
-						<td ><span wicket:id="id">ID Imagen</span></td>
-						<td><span id="modalidad">*</span></td>
-						<td><span id="diagnostico">**</span></td>
-						<td align="center" width="20%"><img wicket:id="imagen" class="img-thumbnail"/></td>
-						<td align="center"><a wicket:id="detalle"><img src="images/info.png"/></a></td>
+						<td><span wicket:id="id"/></td>
+						<td><span wicket:id="serieId"/></td>
+						<td><span wicket:id="modalidad"/></td>
+						<td align="center" width="20%"><a wicket:id="detalle"><img wicket:id="imagen" class="img-thumbnail"/></a></td>
 					</tr>
 					</tbody>
 				</table>

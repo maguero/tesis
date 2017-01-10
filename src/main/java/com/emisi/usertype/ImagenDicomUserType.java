@@ -81,25 +81,11 @@ public class ImagenDicomUserType implements UserType, Serializable {
 		OracleResultSet ors = (OracleResultSet)drs.getInnermostDelegate();
 		
 		// extraer la imagen dicom
-		OrdDicom dicom = (OrdDicom) ors.getORAData(names[0], OrdDicom.getORADataFactory());
-		
-		return dicom;
+		return (OrdDicom) ors.getORAData(names[0], OrdDicom.getORADataFactory());
 	}
 
 	public void nullSafeSet(PreparedStatement preparedStatement, Object o, int i)
 			throws HibernateException, SQLException {
-		/*
-		if (value == null) {
-
-			st.setNull(index, OrdDicom._SQL_TYPECODE, OrdDicom._SQL_NAME);
-
-		} else {
-			
-			final OrdDicom dicom = (OrdDicom) value;
-			st.setObject(index, dicom, OrdDicom._SQL_TYPECODE);
-
-		}
-		*/
 		if( o == null) {
 			preparedStatement.setNull(i, Types.STRUCT, OrdDicom._SQL_NAME);
 		} else {

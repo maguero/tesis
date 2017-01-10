@@ -9,8 +9,8 @@
 	<!-- Datasource utilizado en desarrollo. -->
 	<bean id="dataSourceDev" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
-		<!--<property name="url" value="jdbc:oracle:thin:@192.168.40.190:1521:orcl" />-->
-		<property name="url" value="jdbc:oracle:thin:@192.168.1.136:1521:orcl" />
+		<!--<property name="url" value="jdbc:oracle:thin:@192.168.1.136:1521:orcl" />-->
+		<property name="url" value="jdbc:oracle:thin:@192.168.40.190:1521:orcl" />
 		<property name="username" value="hr" />
 		<property name="password" value="oracle" />
 	</bean>
@@ -19,23 +19,22 @@
 	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	
+
     <util:properties id="hibernateBaseProperties">
     	<prop key="hibernate.dialect">com.emisi.usertype.DicomOracle10gDialect</prop>
         <prop key="hibernate.show_sql">true</prop>
-		<!--        
+		<!--
         <prop key="hibernate.hbm2ddl.auto">create</prop>
 		<prop key="hibernate.hbm2ddl.auto">update</prop>
 		-->
-		
     </util:properties>
 	
 	<!-- Definición de las session factory de hibernate. -->
 	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.LocalSessionFactoryBean">
 		<property name="dataSource" ref="dataSourceDev"/>
-		
+
 		<property name="hibernateProperties" ref="hibernateBaseProperties" />
-	    
+
 	    <property name="mappingResources">
 			<list>
 				<value>mappings/CustomTypes.hbm.xml</value>

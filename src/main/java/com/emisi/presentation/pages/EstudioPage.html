@@ -5,10 +5,28 @@
 
 	<wicket:extend>
 	
-		<h2>Estudio *******</h2>
+		<h2>Estudio</h2>
 		<br/>
-		poner mas datos aca
 
+		<table class="table table-striped">
+			<tbody>
+			<tr>
+				<td>ID</td>
+				<td><span wicket:id="estudio.id" /></td>
+			</tr>
+			<tr>
+				<td>Descripci&oacute;n</td>
+				<td><span wicket:id="estudio.descripcion" /></td>
+			</tr>
+			<tr>
+				<td>Paciente</td>
+				<td><span wicket:id="estudio.paciente" /></td>
+			</tr>
+			</tbody>
+		</table>
+
+		<br/>
+		<h3>Series</h3>
 		<div wicket:id="navigator"></div>
 		<div class="row">
 	        <div>
@@ -17,18 +35,14 @@
 					<tr>
 						<th>ID Serie</th>
 						<th>Descripción</th>
-						<!--<th>**</th>-->
-						<!--<th>Imagen</th>-->
-						<th>Acci&oacute;n</th>
+						<th>Modalidad</th>
 					</tr>
 					</thead>
 					<tbody>
 					<tr wicket:id="tablaSeries">
-						<td ><span wicket:id="id">ID Imagen</span></td>
+						<td ><a wicket:id="detalle"><span wicket:id="id">ID Imagen</span></a></td>
 						<td><span wicket:id="descripcion">*</span></td>
-						<!--<td><span id="diagnostico">**</span></td>-->
-						<!--<td align="center" width="20%"><img wicket:id="imagen" class="img-thumbnail"/></td>-->
-						<td align="center"><a wicket:id="detalle"><img src="images/info.png"/></a></td>
+						<td>--</td>
 					</tr>
 					</tbody>
 				</table>

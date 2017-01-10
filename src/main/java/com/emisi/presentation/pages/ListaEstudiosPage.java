@@ -43,8 +43,6 @@ public class ListaEstudiosPage extends TemplateIndex {
 					return;
 				}
 				
-                // id de la imagen
-				item.add(new Label("id", estudio.getIdEstudio().substring(0, 14).concat("...")));//.substring(0, 10)));
 				// id de la imagen
 				item.add(new Label("fkPaciente", estudio.getIdPaciente()));
 				// id de la imagen
@@ -55,6 +53,10 @@ public class ListaEstudiosPage extends TemplateIndex {
 				pars.add("idEstudio", estudio.getIdEstudio());
 				
 				BookmarkablePageLink linkDetalle = new BookmarkablePageLink("detalle", EstudioPage.class, pars);
+				// id de la imagen
+				linkDetalle.add(new Label("id", estudio.getIdEstudio().substring(0, 9)
+						.concat("...")
+						.concat(estudio.getIdEstudio().substring((estudio.getIdEstudio().length() - 9), estudio.getIdEstudio().length()))));
 				item.add(linkDetalle);
 				
                 

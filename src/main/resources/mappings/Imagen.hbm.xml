@@ -2,17 +2,6 @@
 <!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping package="com.emisi.model">
 
-	<!-- 
-	<class name="Imagen" table="imagenes">
-		<id name="idImagen" column="imagen.idImagen" />
-		
-		<property name="dicom" type="OrdDicomType" column="imagen.dicom" />
-		<property name="diagnostico" column="imagen.diagnostico" />
-		<property name="modalidad" column="imagen.modalidad" />
-	
-	</class>
-	 -->
-	
 	<class name="Imagen" table="imagen">
 		<id name="idImagen" column="idImagen" />
 		<property name="fkSerie" column="fkSerie" />
@@ -22,5 +11,5 @@
 	<query name="bySerieId">
 		<![CDATA[from Imagen where fkSerie = :idSerie]]>
 	</query>
-	
+
 </hibernate-mapping>

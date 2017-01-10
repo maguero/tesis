@@ -20,14 +20,12 @@ import org.springframework.orm.hibernate3.support.HibernateDaoSupport;
  * @author mjaguero
  * 
  */
-public class GenericDAOImpl<T> extends HibernateDaoSupport implements
-		GenericDAO<T> {
+public class GenericDAOImpl<T> extends HibernateDaoSupport implements GenericDAO<T> {
 
 	// metodos para busquedas
 
 	@SuppressWarnings("unchecked")
 	public T find(final Serializable id, final Class<? extends T> persistentType) {
-		// getHibernateTemplate().setAlwaysUseNewSession(useNewSession);
 		return (T) getHibernateTemplate().execute(new HibernateCallback() {
 			public Object doInHibernate(Session session)
 					throws HibernateException, SQLException {
@@ -67,7 +65,7 @@ public class GenericDAOImpl<T> extends HibernateDaoSupport implements
 	}
 	
 	@SuppressWarnings("unused")
-	private List executeQuery(Query query, List parameters,
+	protected List executeQuery(Query query, List parameters,
 			Map<String, Object> namedParameters, int maxResult) {
 		setQueryParameters(query, parameters, namedParameters);
 

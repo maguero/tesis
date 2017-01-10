@@ -21,8 +21,6 @@ public interface GenericDAO<T> {
 	
 	List<T> find(String namedQuery, final Map<String, Object> params);
 	
-	// List<T> find(CriteriaQuery<T> query);
-
     List<T> findAll(Class clazz);
 
 	// metodos para persistir
