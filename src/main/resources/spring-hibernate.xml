@@ -9,8 +9,11 @@
 	<!-- Datasource utilizado en desarrollo. -->
 	<bean id="dataSourceDev" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:@192.168.1.124:1521:orcl" />
+		<!--<property name="url" value="jdbc:oracle:thin:@192.168.1.121:1521:orcl" />-->
 		<!--<property name="url" value="jdbc:oracle:thin:@192.168.1.136:1521:orcl" />-->
-		<property name="url" value="jdbc:oracle:thin:@192.168.40.190:1521:orcl" />
+		<!--<property name="url" value="jdbc:oracle:thin:@192.168.1.119:1521:orcl" />-->
+		<!--<property name="url" value="jdbc:oracle:thin:@192.168.40.190:1521:orcl" />-->
 		<property name="username" value="hr" />
 		<property name="password" value="oracle" />
 	</bean>
@@ -41,6 +44,7 @@
 				<value>mappings/Imagen.hbm.xml</value>
 				<value>mappings/Serie.hbm.xml</value>
 				<value>mappings/Estudio.hbm.xml</value>
+				<value>mappings/Regla.hbm.xml</value>
 				<!--
 				 -->
 			</list>

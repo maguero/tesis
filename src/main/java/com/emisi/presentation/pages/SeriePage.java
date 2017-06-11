@@ -80,7 +80,7 @@ public class SeriePage extends TemplateIndex {
 					final Image imageFromDicom = DicomUtils.getImageFromDicom(dcmObj);
 					linkDetalle.add(imageFromDicom);
 				} catch (Exception e1) {
-					item.add(new Label("imagen", "Imagen no disponible."));
+					linkDetalle.add(new Label("imagen", "Imagen no disponible."));
 					e1.printStackTrace();
 				}
 

@@ -8,7 +8,35 @@
 		<h2>B&uacute;squeda de imágenes por regla semántica</h2>
 		<br/>
 
+		<form wicket:id="form">
+			<select wicket:id="rules"></select>
+		</form>
 
+		<div wicket:id="contenedor">
+			<div wicket:id="navigator"></div>
+			<div class="row">
+				<div>
+					<table class="table table-striped">
+						<thead>
+						<tr>
+							<th>ID Imagen</th>
+							<th>ID Serie</th>
+							<th>Modalidad</th>
+							<th>Imagen</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr wicket:id="tablaImagen">
+							<td><span wicket:id="id"/></td>
+							<td><span wicket:id="serieId"/></td>
+							<td><span wicket:id="modalidad"/></td>
+							<td align="center" width="20%"><a wicket:id="detalle"><img wicket:id="imagen" class="img-thumbnail"/></a></td>
+						</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
 
 	</wicket:extend>
 

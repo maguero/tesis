@@ -26,10 +26,14 @@ public class ImagenDAOImpl extends GenericDAOImpl<Imagen> {
             public List<Imagen> doInHibernate(Session session) throws HibernateException,
                     SQLException {
 
-            	SQLQuery query = session.createSQLQuery("SELECT * from imagen WHERE idImagen IN (" +
-															"SELECT imagen_ob.busquedaPorRegla(:ruleName) FROM DUAL)")
+				session.createSQLQuery("call ord_dicom.setDataModel()").executeUpdate();
+
+            	SQLQuery query = session.createSQLQuery(
+            			"SELECT * from imagen img " +
+								"JOIN TABLE (select imagen_ob.busquedaPorRegla('" + ruleName + "') as resultado from DUAL) imgRef " +
+								"on imgRef.column_value.idImagen = img.idImagen ")
             			.addEntity("imagen",Imagen.class);
-            	query.setParameter("ruleName", ruleName);
+            	//query.setParameter("ruleName", ruleName);
 
                 return query.list();
             }

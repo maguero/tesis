@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.emisi.model">
+
+	<class name="Regla" table="mdsys.semr_emisi_rulebase">
+		<id name="id" column="rule_name" />
+		<!--<property name="nombre" column="rule_name" />-->
+	</class>
+
+	<query name="reglas">
+		<![CDATA[from Regla where id like '%.%']]>
+	</query>
+
+</hibernate-mapping>
