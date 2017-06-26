@@ -37,6 +37,7 @@
 		<spring.version>2.5.5</spring.version>
 		<dcm4che.version>2.0.28</dcm4che.version>
 	</properties>
+
 	<dependencies>
 		<!--  WICKET DEPENDENCIES -->
 
@@ -370,6 +371,14 @@
 					<wtpversion>${wtp.version}</wtpversion>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.eluder.coveralls</groupId>
+				<artifactId>coveralls-maven-plugin</artifactId>
+				<version>4.3.0</version>
+				<configuration>
+					<repoToken>5oE2Hy6wGNKGJDcAfO5Q5v9jmGhroMfIZ</repoToken>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
@@ -394,4 +403,14 @@
 			<url>http://www.dcm4che.org/maven2/</url>
 		</repository>
 	</repositories>
+
+	<!-- https://bintray.com/maguero/tesis
+	<distributionManagement>
+		<repository>
+			<id>tesis</id>
+			<url>https://bintray.com/maguero/tesis;publish=1</url>
+		</repository>
+	</distributionManagement>
+	-->
+
 </project>
