@@ -45,6 +45,7 @@
 				<value>mappings/Serie.hbm.xml</value>
 				<value>mappings/Estudio.hbm.xml</value>
 				<value>mappings/Regla.hbm.xml</value>
+				<value>mappings/IdNombre.hbm.xml</value>
 				<!--
 				 -->
 			</list>

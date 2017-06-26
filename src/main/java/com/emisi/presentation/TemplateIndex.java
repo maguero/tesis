@@ -40,12 +40,5 @@ public abstract class TemplateIndex extends WebPage {
 		BookmarkablePageLink linkBusquedaSemantica = new BookmarkablePageLink("busquedaSemantica", BusquedaPorReglaPage.class);
 		add(linkBusquedaSemantica);
 		
-//		BookmarkablePageLink linkAutorizacion = new BookmarkablePageLink("carga", CargaImagenesPage.class);
-//		add(linkAutorizacion);
-		
-		/*		
-		BookmarkablePageLink linkAyuda = new BookmarkablePageLink("ayuda", AyudaPage.class);
-		add(linkAyuda);
-		*/
 	}
 }

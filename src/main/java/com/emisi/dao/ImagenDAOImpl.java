@@ -1,5 +1,6 @@
 package com.emisi.dao;
 
+import com.emisi.model.IdNombre;
 import com.emisi.model.Imagen;
 import com.emisi.model.Regla;
 import org.hibernate.HibernateException;
@@ -33,7 +34,6 @@ public class ImagenDAOImpl extends GenericDAOImpl<Imagen> {
 								"JOIN TABLE (select imagen_ob.busquedaPorRegla('" + ruleName + "') as resultado from DUAL) imgRef " +
 								"on imgRef.column_value.idImagen = img.idImagen ")
             			.addEntity("imagen",Imagen.class);
-            	//query.setParameter("ruleName", ruleName);
 
                 return query.list();
             }
@@ -70,6 +70,42 @@ public class ImagenDAOImpl extends GenericDAOImpl<Imagen> {
 				SQLQuery query = session.createSQLQuery(
 						"SELECT rule_code, rule_name from rule_table");
 				query.addEntity(Regla.class);
+
+				return query.list();
+			}
+		});
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<IdNombre> getDiagnosticosByStudy(final String idEstudio) {
+		return (List<IdNombre>) getHibernateTemplate().execute(new HibernateCallback() {
+			public List<Regla> doInHibernate(Session session) throws HibernateException,
+					SQLException {
+
+				SQLQuery query = session.createSQLQuery(
+						"SELECT d$_suffix id, l nombre FROM TABLE(" +
+								" SEM_MATCH('{ e:" + idEstudio + " e:diagnostico ?d . ?d rdfs:label ?l}'," +
+								" SEM_Models('emisi_vm'), null," +
+								" SEM_ALIASES(SEM_ALIAS('e','http://www.emisi.utn.edu.ar/tesis/')), null))")
+						.addEntity("idNombre",IdNombre.class);
+
+				return query.list();
+			}
+		});
+	}
+
+	@SuppressWarnings("unchecked")
+	public List<IdNombre> getSintomasByStudy(final String idEstudio) {
+		return (List<IdNombre>) getHibernateTemplate().execute(new HibernateCallback() {
+			public List<Regla> doInHibernate(Session session) throws HibernateException,
+					SQLException {
+
+				SQLQuery query = session.createSQLQuery(
+						"SELECT s$_suffix id, l nombre FROM TABLE(" +
+								" SEM_MATCH('{ e:" + idEstudio + " e:sintoma ?s . ?s rdfs:label ?l}'," +
+								" SEM_Models('emisi_vm'), null," +
+								" SEM_ALIASES(SEM_ALIAS('e','http://www.emisi.utn.edu.ar/tesis/')), null))")
+						.addEntity("idNombre",IdNombre.class);
 
 				return query.list();
 			}

@@ -112,31 +112,43 @@
 			<groupId>com.oracle</groupId>
 			<artifactId>ojdbc6</artifactId>
 			<version>11.2.0</version>
+			<scope>system</scope >
+			<systemPath>${project.basedir}/lib/oracle/ojdbc6.jar</systemPath>
 		</dependency>
 
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>orddicom</artifactId>
 			<version>11.2.0</version>
+			<scope>system</scope >
+			<systemPath>${project.basedir}/lib/oracle/orddicom.jar</systemPath>
 		</dependency>
 
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>ordim</artifactId>
 			<version>11.2.0</version>
+			<scope>system</scope >
+			<systemPath>${project.basedir}/lib/oracle/ordim.jar</systemPath>
 		</dependency>
 
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>xdb</artifactId>
 			<version>11.2.0</version>
+			<scope>system</scope >
+			<systemPath>${project.basedir}/lib/oracle/xdb.jar</systemPath>
 		</dependency>
 
 		<dependency>
 			<groupId>com.oracle</groupId>
 			<artifactId>xmlparserv2</artifactId>
 			<version>11.2.0</version>
+			<scope>system</scope >
+			<systemPath>${project.basedir}/lib/oracle/xmlparserv2.jar</systemPath>
 		</dependency>
+
+		<!-- end Oracle dependencies -->
 
 		<dependency>
             <groupId>commons-dbcp</groupId>
@@ -265,6 +277,12 @@
 			<groupId>com.sun.media</groupId>
 			<artifactId>jai_imageio</artifactId>
 			<version>1.1</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>22.0</version>
 		</dependency>
 
 		<!--

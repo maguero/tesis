@@ -1,11 +1,12 @@
 package com.emisi.presentation.pages;
 
+import com.emisi.dao.ImagenDAOImpl;
 import com.emisi.model.Estudio;
-import com.emisi.model.Imagen;
+import com.emisi.model.IdNombre;
 import com.emisi.model.Serie;
 import com.emisi.presentation.TemplateIndex;
 import com.emisi.service.GenericService;
-import com.emisi.util.DicomUtils;
+import com.google.common.base.Joiner;
 import org.apache.commons.collections.FastHashMap;
 import org.apache.wicket.PageParameters;
 import org.apache.wicket.markup.html.basic.Label;
@@ -15,8 +16,6 @@ import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.markup.repeater.data.DataView;
 import org.apache.wicket.markup.repeater.data.ListDataProvider;
 import org.apache.wicket.spring.injection.annot.SpringBean;
-import org.dcm4che2.data.DicomObject;
-import org.dcm4che2.io.DicomInputStream;
 
 import java.util.List;
 import java.util.Map;
@@ -32,6 +31,9 @@ public class EstudioPage extends TemplateIndex {
 	@SpringBean(name = "service.estudio")
 	private GenericService<Estudio> estudioService;
 
+	@SpringBean(name = "dao.custom.imagen")
+	private ImagenDAOImpl utilDao;
+
 	public EstudioPage(final PageParameters parameters) {
 		super(parameters);
 
@@ -43,6 +45,8 @@ public class EstudioPage extends TemplateIndex {
 		add(new Label("estudio.id", estudio.getIdEstudio()));
 		add(new Label("estudio.descripcion", estudio.getDescripcion()));
 		add(new Label("estudio.paciente", estudio.getIdPaciente()));
+		add(new Label("estudio.diagnosticos", getDiagnosticos(estudioId)));
+		add(new Label("estudio.sintomas", getSintomas(estudioId)));
 
 		Map<String, Object> parametros = new FastHashMap();
 		parametros.put("idEstudio", estudioId);
@@ -87,5 +91,15 @@ public class EstudioPage extends TemplateIndex {
 		add(new PagingNavigator("navigator", dataView));
 
 	}
-	
+
+	private String getSintomas(final String estudioId) {
+		final List<IdNombre> sintomas = utilDao.getSintomasByStudy(estudioId);
+		return Joiner.on("  ").join(sintomas);
+	}
+
+	private String getDiagnosticos(final String estudioId) {
+		final List<IdNombre> diagnosticos = utilDao.getDiagnosticosByStudy(estudioId);
+		return Joiner.on("  ").join(diagnosticos);
+	}
+
 }

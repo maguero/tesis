@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping SYSTEM "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.emisi.model">
+
+	<class name="IdNombre">
+		<id name="id" type="java.lang.String"/>
+		<property name="nombre" type="java.lang.String" />
+	</class>
+
+</hibernate-mapping>
