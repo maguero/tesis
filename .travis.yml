@@ -4,3 +4,6 @@ install: mvn install -DskipTests=true -Dmaven.javadoc.skip=true -B -V
 
 jdk:
   - oraclejdk8
+
+after_success:
+  - sbt coveralls
