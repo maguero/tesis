@@ -3,22 +3,19 @@
  */
 package com.emisi.usertype;
 
+import oracle.jdbc.OracleResultSet;
+import oracle.jdbc.driver.OracleConnection;
+import oracle.ord.dicom.OrdDicom;
+import org.hibernate.HibernateException;
+import org.hibernate.usertype.UserType;
+
+import javax.sql.PooledConnection;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Types;
-
-import javax.sql.PooledConnection;
-
-import oracle.jdbc.OracleResultSet;
-import oracle.jdbc.driver.OracleConnection;
-import oracle.ord.dicom.OrdDicom;
-
-import org.apache.commons.dbcp.DelegatingPreparedStatement;
-import org.hibernate.HibernateException;
-import org.hibernate.usertype.UserType;
 
 /**
  * @author maguero

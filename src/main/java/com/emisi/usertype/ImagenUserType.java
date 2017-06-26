@@ -3,6 +3,14 @@
  */
 package com.emisi.usertype;
 
+import com.emisi.model.ContenidoImagen;
+import oracle.jdbc.driver.OracleConnection;
+import oracle.sql.STRUCT;
+import oracle.sql.StructDescriptor;
+import org.hibernate.HibernateException;
+import org.hibernate.usertype.UserType;
+
+import javax.sql.PooledConnection;
 import java.io.Serializable;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -10,19 +18,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Struct;
 import java.sql.Types;
-
-import javax.sql.PooledConnection;
-
-import oracle.jdbc.OracleResultSet;
-import oracle.jdbc.driver.OracleConnection;
-import oracle.ord.dicom.OrdDicom;
-import oracle.sql.STRUCT;
-import oracle.sql.StructDescriptor;
-
-import org.hibernate.HibernateException;
-import org.hibernate.usertype.UserType;
-
-import com.emisi.model.ContenidoImagen;
 
 /**
  * @author maguero
@@ -107,8 +102,8 @@ public class ImagenUserType implements UserType, Serializable {
 		imagen.setDiagnostico((String) struct.getAttributes()[2]);
 		imagen.setModalidad((String) struct.getAttributes()[3]);
 		
-		org.apache.commons.dbcp.DelegatingResultSet drs = (org.apache.commons.dbcp.DelegatingResultSet)rs;
-		OracleResultSet ors = (OracleResultSet)drs.getInnermostDelegate();
+//		org.apache.commons.dbcp.DelegatingResultSet drs = (org.apache.commons.dbcp.DelegatingResultSet)rs;
+//		OracleResultSet ors = (OracleResultSet)drs.getInnermostDelegate();
 		
 		// extraer la imagen dicom
 		//OrdDicom dicom = (OrdDicom) ors.getORAData("this_.imagen.dicom", OrdDicom.getORADataFactory());

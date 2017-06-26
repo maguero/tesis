@@ -5,7 +5,6 @@ import com.emisi.model.Imagen;
 import com.emisi.model.Regla;
 import com.emisi.presentation.TemplateIndex;
 import com.emisi.presentation.pages.ImagenPage;
-import com.emisi.service.GenericService;
 import com.emisi.util.DicomUtils;
 import org.apache.wicket.MarkupContainer;
 import org.apache.wicket.PageParameters;
@@ -17,8 +16,6 @@ import org.apache.wicket.markup.html.form.DropDownChoice;
 import org.apache.wicket.markup.html.form.Form;
 import org.apache.wicket.markup.html.form.SubmitLink;
 import org.apache.wicket.markup.html.link.BookmarkablePageLink;
-import org.apache.wicket.markup.html.list.ListItem;
-import org.apache.wicket.markup.html.list.ListView;
 import org.apache.wicket.markup.html.navigation.paging.PagingNavigator;
 import org.apache.wicket.markup.repeater.Item;
 import org.apache.wicket.markup.repeater.data.DataView;
@@ -30,7 +27,6 @@ import org.dcm4che2.data.DicomObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class BusquedaPorReglaPage extends TemplateIndex {
 

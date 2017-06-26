@@ -6,4 +6,4 @@ jdk:
   - oraclejdk8
 
 after_success:
-  - sbt coveralls
+  - mvn coveralls:report

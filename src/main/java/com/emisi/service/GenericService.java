@@ -4,40 +4,38 @@ import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
-import org.hibernate.criterion.DetachedCriteria;
-
 /**
  * Servicio Generico encargado de la persistencia y consulta sobre los objetos de dominio.
- * CLAZZ: Clase principal, objecto de dominio.
+ * C: Clase principal, objecto de dominio.
  * @author mjaguero
  *
  */
-public interface GenericService<CLAZZ> {
+public interface GenericService<C> {
 
 	/**
 	 * Persiste una entidad en la base de datos
 	 * @param entity
 	 */
-	void save(CLAZZ entity);
+	void save(C entity);
 	
 	/**
 	 * Elimina una entidad de la base de datos
 	 * @param entity
 	 */
-	void delete(CLAZZ entity);
+	void delete(C entity);
 	
 	/**
 	 * Busca una entidad en la base de datos por su id.
 	 * @param id
 	 * @return
 	 */
-	CLAZZ findById(Serializable id);
+	C findById(Serializable id);
 	
 	/**
 	 * Retorna todas las entidades.
 	 * @return
 	 */
-	List<CLAZZ> findAll();
+	List<C> findAll();
 	
 	/**
 	 * Consulta a traves de una NamedQuery
@@ -45,7 +43,7 @@ public interface GenericService<CLAZZ> {
 	 * @param parametros
 	 * @return
 	 */
-	List<CLAZZ> findByNamedQuery(String nombre, final Map<String, Object> parametros);
+	List<C> findByNamedQuery(String nombre, final Map<String, Object> parametros);
 	
 	/**
 	 * Consulta a traves de una NamedQuery
@@ -53,13 +51,13 @@ public interface GenericService<CLAZZ> {
 	 * @param parametros
 	 * @return
 	 */
-	//List<CLAZZ> findByNamedQueryMaxResult(String nombre, int maxResult, Object... parametros);
+	//List<C> findByNamedQueryMaxResult(String nombre, int maxResult, Object... parametros);
 	
 	/**
 	 * Consulta a traves de un Criteria
 	 * @param criteria
 	 * @return
 	 */
-	//List<CLAZZ> findByCriteria(DetachedCriteria criteria);
+	//List<C> findByCriteria(DetachedCriteria criteria);
 	
 }
